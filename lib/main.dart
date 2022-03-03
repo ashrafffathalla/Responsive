@@ -1,8 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:responsive/screens/desktop.dart';
-import 'package:responsive/screens/mobile.dart';
+import 'package:responsive/responsive/screens/desktop.dart';
+import 'package:responsive/responsive/screens/mobile.dart';
+
 
 void main() {
   runApp(const MyApp());

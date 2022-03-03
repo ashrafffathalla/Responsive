@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:responsive/responsive/adaptive/adaptive_indecator.dart';
+import 'package:responsive/responsive/adaptive/constance.dart';
 class MobileScreen extends StatelessWidget {
   const MobileScreen({Key? key}) : super(key: key);
   @override
@@ -79,6 +81,10 @@ class MobileScreen extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                  const SizedBox(height: 40.0),
+                  Center(
+                    child: AdaptiveIndicator(os: getOS(),),
                   )
                 ],
               ),
