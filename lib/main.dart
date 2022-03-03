@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:responsive/screens/desktop.dart';
+import 'package:responsive/screens/mobile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,14 +16,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home:LayoutBuilder(
-        builder: (BuildContext context, constraints)
+
+      home:Builder(
+        builder: (BuildContext context)
           {
-            return const DesktopScreen();
+
+            if(MediaQuery.of(context).size.width.toInt() <=560)
+            {
+              return MediaQuery(
+                data: MediaQuery.of(context).copyWith(
+                  textScaleFactor: 0.7,
+                ),
+                  child: const MobileScreen());
+            }else return DesktopScreen();
           },
       ),
     );
