@@ -17,7 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: const DesktopScreen(),
+      home:LayoutBuilder(builder: (BuildContext context, constraints)
+          {
+            return const DesktopScreen();
+          },
+      ),
     );
   }
 }
